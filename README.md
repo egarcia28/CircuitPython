@@ -4,7 +4,7 @@ This repository will actually serve as a aid to help you get started with your o
 * [Table of Contents](#TableOfContents)
 * [CircuitPython_Servo](#CircuitPython_Servo)
 * [CircuitPython_LCD](#CircuitPython_LCD)
-* [NextAssignmentGoesHere](#NextAssignment)
+* [NextAssignmentGoesHere](#CircuitPython_Ultrasonic)
 ---
 
 
@@ -50,7 +50,7 @@ Pictures / Gifs of your work should go here.  You need to communicate what your 
 
 
 
-## NextAssignment
+## CircuitPython_Ultrasonic
 
 ### Description & Code
 
