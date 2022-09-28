@@ -1,24 +1,66 @@
-First, you will need to import the necessary libraries:
+# CircuitPython
+This repository will actually serve as a aid to help you get started with your own template.  You should copy the raw form of this readme into your own, and use this template to write your own.  If you want to draw inspiration from other classmates, feel free to check [this directory of all students!](https://github.com/chssigma/Class_Accounts).
+## Table of Contents
+* [Table of Contents](#TableOfContents)
+* [CircuitPython_Servo](#CircuitPython_Servo)
+* [CircuitPython_LCD](#CircuitPython_LCD)
+* [NextAssignmentGoesHere](#NextAssignment)
+---
 
-import time
-import board
 
-Next, you will need to create a PWMOut object on the specified pin. In this case, we will use pin D1:
 
-servo = pulseio.PWMOut(board.D1, frequency=50)
+## CircuitPython_Servo
 
-To move the servo, you will need to set the duty cycle of the PWM signal. A value of 2000 corresponds to a fully clockwise rotation, while a value of 1000 corresponds to a fully counter-clockwise rotation. Values in between will result in proportional movement.
+### Description & Code
 
-For example, to rotate the servo clockwise by 90 degrees:
+```python
+Code goes here
 
-servo.duty_cycle = 2000
-time.sleep(0.5)
+```
 
-To rotate the servo counter-clockwise by 90 degrees:
+### Evidence
 
-servo.duty_cycle = 1000
-time.sleep(0.5)
+Pictures / Gifs of your work should go here.  You need to communicate what your thing does.
 
-Finally, to stop the servo:
+### Wiring
 
-servo.duty_cycle = 0
+### Reflection
+
+
+
+
+## CircuitPython_LCD
+
+### Description & Code
+
+```python
+Code goes here
+
+```
+
+### Evidence
+
+Pictures / Gifs of your work should go here.  You need to communicate what your thing does.
+
+### Wiring
+
+### Reflection
+
+
+
+
+
+## NextAssignment
+
+### Description & Code
+
+```python
+Code goes here
+
+```
+
+### Evidence
+
+### Wiring
+
+### Reflection
