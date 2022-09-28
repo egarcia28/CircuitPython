@@ -40,6 +40,11 @@ while True:
         my_servo.angle = angle
         time.sleep(0.0)
 ```
+First, you will need to import the necessary libraries:
+Next, you will need to create a PWMOut object on the specified pin. In this case, I used pin D1:
+To move the servo, you will need to set the duty cycle of the PWM signal. A value of 2000 corresponds to a fully clockwise rotation, while a value of 1000 corresponds to a fully counter-clockwise rotation. Values in between will result in proportional movement.
+For example, to rotate the servo clockwise by 90 degrees:
+servo.duty_cycle = 2000 time.sleep(0.5)
 
 ### Evidence
 
