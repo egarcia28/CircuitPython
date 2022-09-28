@@ -84,8 +84,9 @@ Pictures / Gifs of your work should go here.  You need to communicate what your 
 
 ### Description & Code
 
-```
+Code credit goes to my classmates [Graham Gilbert-Schroeer](https://github.com/VeganPorkChop/CircutPython) and [Jack Helmke](https://github.com/jhelmke45/CircuitPython)
 
+```
 import time
 import board
 import adafruit_hcsr04
