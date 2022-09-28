@@ -48,11 +48,11 @@ servo.duty_cycle = 2000 time.sleep(0.5)
 
 ### Evidence
 
-
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/112961319/192808365-425dc20f-adb3-4a49-96a3-89f3e8195865.gif)
 
 ### Wiring
 
-
+![image](https://user-images.githubusercontent.com/112961319/192807559-d1add3fb-849b-4811-b61a-297383081065.png)
 
 ### Reflection
 
