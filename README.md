@@ -18,9 +18,10 @@ If you want to draw inspiration from other classmates, feel free to check [this 
 Code credit goes to [this adafruit link](https://learn.adafruit.com/adafruit-metro-m4-express-featuring-atsamd51/circuitpython-servo)
 
 ```
+#Elias
 # SPDX-FileCopyrightText: 2018 Kattni Rembor for Adafruit Industries
-#
 # SPDX-License-Identifier: MIT
+#This code rotates a servo back and forth
 
 """CircuitPython Essentials Servo standard servo example"""
 import time
@@ -68,6 +69,10 @@ servo.duty_cycle = 2000 time.sleep(0.5)
 Code credit goes to [Grant Gastinger](https://github.com/ggastin30/CPython)
 
 ```
+#Elias Garcia
+#When a button is presses it increses or decreases the count based on the position of a switch
+#Code from Grant Gastinger
+
 import board
 from lcd.lcd import LCD
 from lcd.i2c_pcf8574_interface import I2CPCF8574Interface
@@ -133,6 +138,10 @@ This code creates an LCD object and prints "elias" to the LCD. It also sets up a
 Code credit goes to my classmates [Graham Gilbert-Schroeer](https://github.com/VeganPorkChop/CircutPython) and [Jack Helmke](https://github.com/jhelmke45/CircuitPython)
 
 ```
+#Elias Garcia
+#This changes a gradient on the neopixel based on the distance outputted by the ultrasonic sensor
+#Base code from Graham Gilbert-Schroeer
+
 import time
 import board
 import adafruit_hcsr04
