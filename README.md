@@ -116,7 +116,7 @@ This code creates an LCD object and prints "elias" to the LCD. It also sets up a
 
 ### Evidence
 
-Pictures / Gifs of your work should go here.  You need to communicate what your thing does.
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/112961319/193040969-56204239-2e81-486f-a2e2-43e14046091b.gif)
 
 ### Wiring
 
@@ -178,5 +178,7 @@ This is  code that uses a sensor to measure the distance in cm and then uses tha
 ![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/112961319/193037726-5598bf39-e9a5-4eb4-a133-c633c204e274.gif)
 
 ### Wiring
+
+![snapture](https://user-images.githubusercontent.com/112961319/193039397-2c3c393a-8d91-427a-a0bf-80b9066cfccc.PNG)
 
 ### Reflection
