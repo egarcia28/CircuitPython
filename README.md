@@ -120,9 +120,9 @@ Pictures / Gifs of your work should go here.  You need to communicate what your 
 
 ### Wiring
 
+![Screenshot 2022-09-29 8 37 07 AM](https://user-images.githubusercontent.com/112961319/193033429-e5198fd6-79fd-4952-a702-64e0c3bba90c.png)
+
 ### Reflection
-
-
 
 
 
