@@ -1,5 +1,7 @@
 # CircuitPython
-This repository will actually serve as a aid to help you get started with your own template.  You should copy the raw form of this readme into your own, and use this template to write your own.  If you want to draw inspiration from other classmates, feel free to check [this directory of all students!](https://github.com/chssigma/Class_Accounts).
+
+If you want to draw inspiration from other classmates, feel free to check [this directory of all students!](https://github.com/chssigma/Class_Accounts).
+
 ## Table of Contents
 * [Table of Contents](#TableOfContents)
 * [CircuitPython_Servo](#CircuitPython_Servo)
@@ -63,10 +65,54 @@ servo.duty_cycle = 2000 time.sleep(0.5)
 
 ### Description & Code
 
-```python
-Code goes here
+Code credit goes to [Grant Gastinger](https://github.com/ggastin30/CPython)
 
 ```
+import board
+from lcd.lcd import LCD
+from lcd.i2c_pcf8574_interface import I2CPCF8574Interface
+import time
+from digitalio import DigitalInOut, Direction, Pull
+
+# get and i2c object
+i2c = board.I2C()
+btn = DigitalInOut(board.D2)
+btn.direction = Direction.INPUT
+btn.pull = Pull.UP
+clickCount = 0
+
+switch = DigitalInOut(board.D7)
+switch.direction = Direction.INPUT
+switch.pull = Pull.UP
+# some LCDs are 0x3f... some are 0x27...
+lcd = LCD(I2CPCF8574Interface(i2c, 0x3f), num_rows=2, num_cols=16)
+
+lcd.print("elias")
+print("son, i am disapoint.")
+while True:
+    if not switch.value:
+        if not btn.value:
+            lcd.clear()
+            lcd.set_cursor_pos(0, 0)
+            lcd.print("Click Count:")
+            lcd.set_cursor_pos(0,13)
+            clickCount = clickCount + 1
+            lcd.print(str(clickCount))
+        else:
+            pass
+    else:
+        if not btn.value:
+            lcd.clear()
+            lcd.set_cursor_pos(0, 0)
+            lcd.print("Click Count:")
+            lcd.set_cursor_pos(0,13)
+            clickCount = clickCount - 1
+            lcd.print(str(clickCount))
+        else:
+            pass
+    time.sleep(0.1) # sleep for debounce
+```
+This code creates an LCD object and prints "elias" to the LCD. It also sets up a button and a switch, and tracks the number of times the button is clicked. If the switch is on, clicking the button decreases the click count. If the switch is off, clicking the button increases the click count.
 
 ### Evidence
 
