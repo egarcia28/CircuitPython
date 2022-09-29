@@ -62,7 +62,6 @@ servo.duty_cycle = 2000 time.sleep(0.5)
 
 
 
-
 ## CircuitPython_LCD
 
 ### Description & Code
