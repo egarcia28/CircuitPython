@@ -35,6 +35,7 @@ pwm = pwmio.PWMOut(board.D2, duty_cycle=2 ** 15, frequency=250)
 # Create a servo object, my_servo.
 my_servo = servo.Servo(pwm)
 
+
 while True:
     for angle in range(0, 180, 5):  # 0 - 180 degrees, 5 degrees at a time.
         my_servo.angle = angle
