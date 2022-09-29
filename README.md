@@ -179,6 +179,6 @@ This is  code that uses a sensor to measure the distance in cm and then uses tha
 
 ### Wiring
 
-![snapture](https://user-images.githubusercontent.com/112961319/193039397-2c3c393a-8d91-427a-a0bf-80b9066cfccc.PNG)
+![snapture23](https://user-images.githubusercontent.com/112961319/193045742-26a5ac02-6881-416c-9d54-af293deceae0.PNG)
 
 ### Reflection
