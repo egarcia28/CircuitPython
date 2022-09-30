@@ -61,7 +61,6 @@ servo.duty_cycle = 2000 time.sleep(0.5)
 ### Reflection
 
 
-
 ## CircuitPython_LCD
 
 ### Description & Code
@@ -191,3 +190,4 @@ This is  code that uses a sensor to measure the distance in cm and then uses tha
 ![snapture23](https://user-images.githubusercontent.com/112961319/193045742-26a5ac02-6881-416c-9d54-af293deceae0.PNG)
 
 ### Reflection
+
