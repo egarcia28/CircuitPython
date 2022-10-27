@@ -17,7 +17,7 @@ If you want to draw inspiration from other classmates, feel free to check [this 
 
 Code credit goes to [this adafruit link](https://learn.adafruit.com/adafruit-metro-m4-express-featuring-atsamd51/circuitpython-servo)
 
-```
+```python
 #Elias
 # SPDX-FileCopyrightText: 2018 Kattni Rembor for Adafruit Industries
 # SPDX-License-Identifier: MIT
@@ -60,6 +60,7 @@ servo.duty_cycle = 2000 time.sleep(0.5)
 
 ### Reflection
 
+It was really easy to move the servo once I figured out how to set up the PWMOut object. I just had to set the duty cycle to the appropriate value and it would rotate to that position. It was a little tricky to determine what those values were, but after some trial and error, I was able to get it working perfectly.
 
 ## CircuitPython_LCD
 
@@ -67,7 +68,7 @@ servo.duty_cycle = 2000 time.sleep(0.5)
 
 Code credit goes to [Grant Gastinger](https://github.com/ggastin30/CPython)
 
-```
+```python
 #Elias Garcia
 #When a button is presses it increses or decreases the count based on the position of a switch
 #Code from Grant Gastinger
@@ -128,6 +129,7 @@ This code creates an LCD object and prints "elias" to the LCD. It also sets up a
 
 ### Reflection
 
+I found this assignment to be very challenging. I had never worked with LCDs or buttons in circuit python before, so it was a lot of new material for me. I'm glad I was able to figure it out in the end, and I'm proud of my finished product.
 
 
 ## CircuitPython_Ultrasonic
@@ -136,7 +138,7 @@ This code creates an LCD object and prints "elias" to the LCD. It also sets up a
 
 Code credit goes to my classmates [Graham Gilbert-Schroeer](https://github.com/VeganPorkChop/CircutPython) and [Jack Helmke](https://github.com/jhelmke45/CircuitPython)
 
-```
+```python
 #Elias Garcia
 #This changes a gradient on the neopixel based on the distance outputted by the ultrasonic sensor
 #Base code from Graham Gilbert-Schroeer
@@ -179,7 +181,7 @@ while True:
     time.sleep(0.1)
 
 ```
-This is  code that uses a sensor to measure the distance in cm and then uses that information to change the color of a neopixel. If the distance is less than 5cm, the neopixel will be red. If the distance is greater than 5cm and less than 20cm, the neopixel will be a gradient of red. If the distance is greater than 20cm and less than 35cm, the neopixel will be a gradient of blue. If the distance is greater than 35cm, the neopixel will be  green.
+This is code that uses a sensor to measure the distance in cm and then uses that information to change the color of a neopixel. If the distance is less than 5cm, the neopixel will be red. If the distance is greater than 5cm and less than 20cm, the neopixel will be a gradient of red. If the distance is greater than 20cm and less than 35cm, the neopixel will be a gradient of blue. If the distance is greater than 35cm, the neopixel will be  green.
 
 ### Evidence
 
@@ -191,3 +193,4 @@ This is  code that uses a sensor to measure the distance in cm and then uses tha
 
 ### Reflection
 
+This was a fun  and realtively easy project. I liked getting to use the sensor and changing the color of the neopixel based on the input. I think it would be cool to add more sensors and make the neopixel change color or brightness based on different inputs.
