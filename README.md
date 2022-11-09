@@ -7,6 +7,7 @@ If you want to draw inspiration from other classmates, feel free to check [this 
 * [CircuitPython_Servo](#CircuitPython_Servo)
 * [CircuitPython_LCD](#CircuitPython_LCD)
 * [Ultrasonic Sensor](#CircuitPython_Ultrasonic)
+* [Motor Control](#Motor_Control)
 ---
 
 
@@ -194,3 +195,36 @@ This is code that uses a sensor to measure the distance in cm and then uses that
 ### Reflection
 
 This was a fun  and realtively easy project. I liked getting to use the sensor and changing the color of the neopixel based on the input. I think it would be cool to add more sensors and make the neopixel change color or brightness based on different inputs.
+
+## Motor_Control
+
+### Description
+
+
+### Description and Code
+This assignment required us to work on our wiring skill, as most of this assignment we did last year, although one major difference was the boards we used with the new ones not having short protection.
+```python
+import board
+import time
+from analogio import AnalogOut, AnalogIn
+import simpleio
+
+motor = AnalogOut(board.A1)
+pot = AnalogIn(board.A0)
+
+while True:
+    print(simpleio.map_range(pot.value, 96, 65520, 0, 65535))
+    motor.value = int(simpleio.map_range(pot.value, 96, 65520, 0, 65535))
+    time.sleep(.1)          
+```    
+    _Code from [Kaz Shinozaki](https://github.com/kshinoz98/CircuitPython)_
+
+### Evidence
+
+
+### Wiring 
+![Screenshot 2022-11-01 115847](https://user-images.githubusercontent.com/113116262/200857888-3878a731-ac9b-48c8-87bf-4d9ee57448bc.png)
+_Wiring diagram from [Kaz Shinozaki](https://github.com/kshinoz98/CircuitPython)_
+
+### Reflection
+
