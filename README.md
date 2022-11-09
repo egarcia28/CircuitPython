@@ -202,7 +202,7 @@ This was a fun  and realtively easy project. I liked getting to use the sensor a
 
 
 ### Description and Code
-This assignment required us to work on our wiring skill, as most of this assignment we did last year, although one major difference was the boards we used with the new ones not having short protection.
+This assignment required us to work on our wiring skill as most of this assighnment was identiacal to a simmilar one we did last year, although one major difference was the boards we used with the new ones not having short protection, forcing us to be more careful.
 ```python
 import board
 import time
