@@ -137,7 +137,7 @@ I found this assignment to be very challenging. I had never worked with LCDs or 
 
 ### Description & Code
 
-Code credit goes to my classmates [Graham Gilbert-Schroeer](https://github.com/VeganPorkChop/CircutPython) and [Jack Helmke](https://github.com/jhelmke45/CircuitPython)
+Code credit goes to my classmate [Jack Helmke](https://github.com/jhelmke45/CircuitPython)
 
 ```python
 #Elias Garcia
@@ -198,11 +198,9 @@ This was a fun  and realtively easy project. I liked getting to use the sensor a
 
 ## Motor_Control
 
-### Description
-
-
 ### Description and Code
-This assignment required us to work on our wiring skill as most of this assighnment was identiacal to a simmilar one we did last year, although one major difference was the boards we used with the new ones not having short protection, forcing us to be more careful.
+For this assignmnent we were tasked with wiring and coding a dc motor that would change its speed based on a value given to it by a potentionmeter. 
+
 ```python
 import board
 import time
@@ -227,4 +225,4 @@ while True:
 _Wiring diagram from [Kaz Shinozaki](https://github.com/kshinoz98/CircuitPython)_
 
 ### Reflection
-
+This assignment required us to work on our wiring skill as most of this assighnment was identiacal to a simmilar one we did last year, although one major difference was the boards we used with the new ones not having short protection, forcing us to be more careful.
