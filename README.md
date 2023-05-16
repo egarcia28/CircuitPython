@@ -1,13 +1,16 @@
 # CircuitPython
+#Quarter 1
 
 If you want to draw inspiration from other classmates, feel free to check [this directory of all students!](https://github.com/chssigma/Class_Accounts).
 
 ## Table of Contents
-* [Table of Contents](#TableOfContents)
 * [CircuitPython_Servo](#CircuitPython_Servo)
 * [CircuitPython_LCD](#CircuitPython_LCD)
 * [Ultrasonic Sensor](#CircuitPython_Ultrasonic)
 * [Motor Control](#Motor_Control)
+* [CircuitPython Rotary Encoder](#CircuitPython_Rotary_Encoder)
+* [CircuitPython_Photointerrupter](#CircuitPython_Photointerrupter)
+* [Ultrasonic Sensor](#CircuitPython_Ultrasonic)
 ---
 
 
@@ -226,3 +229,205 @@ _Wiring diagram from [Kaz Shinozaki](https://github.com/kshinoz98/CircuitPython)
 
 ### Reflection
 This assignment required us to work on our wiring skill as most of this assighnment was identiacal to a simmilar one we did last year, although one major difference was the boards we used with the new ones not having short protection, forcing us to be more careful.
+
+#Quarter 2
+
+## CircuitPython_Temp_Sensor
+
+### Description & Code
+
+For this assignment we had to read the temperature from a TMP36 sensor and display it on an LCD screen. Depending on the temperature, different messages are printed on the LCD screen to indicate if it's too hot, too cold, or feels great.
+
+```python
+import board
+import analogio
+import time
+from lcd.lcd import LCD
+from lcd.i2c_pcf8574_interface import I2CPCF8574Interface
+#Importing necessary modules and libraries
+
+TMP36_PIN = board.A0  # Analog input connected to TMP36 output.
+
+i2c = board.I2C()
+lcd = LCD(I2CPCF8574Interface(i2c, 0x3f), num_rows=2, num_cols=16)
+#Setting the input pin for the TMP36 sensor and initializing the I2C interface and LCD display with specified parameters
+
+
+def tmp36_temperature_C(analogin):
+    millivolts = analogin.value * (analogin.reference_voltage * 1000 / 65535)
+    return (millivolts - 500) / 10
+#Defining a function to simplify the math for reading the temperature from TMP36 sensor.
+
+# Create TMP36 analog input.
+tmp36 = analogio.AnalogIn(TMP36_PIN)
+
+# Loop forever.
+while True:
+    # Read the temperature in Celsius.
+    temp_C = tmp36_temperature_C(tmp36)
+    temp_C = round(temp_C, 1)
+    # Convert to Fahrenheit.
+    temp_F = (temp_C * 9/5) + 32
+    temp_F = round(temp_F, 1)
+    # Print out the value and delay a second before looping again.
+    lcd.print("{}C {}F".format(temp_C, temp_F))
+    lcd.set_cursor_pos(1,0)
+    if temp_F > 78:
+        lcd.print("TOO HOT!        ")
+    elif temp_F < 70:
+        lcd.print("brrrrr TOO COLD ")
+    else:
+        lcd.print("FEELS GREAT HERE")
+    
+    time.sleep(.25)
+    lcd.set_cursor_pos(0,0)
+```
+Code credit goes to [Jack Helmke](https://github.com/jhelmke45/ExpertCircuitPython)
+
+### Evidence
+
+![ezgif-1-cb03522107](https://user-images.githubusercontent.com/112961319/227983523-624a566c-66a2-4122-9f9a-152ad78777b2.gif)
+
+### Wiring
+
+![image](https://user-images.githubusercontent.com/112961319/227980630-ff76d18c-38e3-41a2-ae99-0b08e47eabc9.png)
+
+### Reflection
+This was a very interesting assignment that I could see having many practical uses, such as a self regulating thermostat, or incubation chamber. I did learn not to plug the tempurature sensor in the wrong way, it gets really hot and most likely ends ups breaking.
+
+## CircuitPython_Rotary_Encoder
+
+### Description & Code
+ 
+For this assignment we were tasked with creating a stoplight-like circuit that could be entirely controlled from a new tool, the rotary encoder.
+
+```python
+import time
+import rotaryio
+import board
+from lcd.lcd import LCD
+from lcd.i2c_pcf8574_interface import I2CPCF8574Interface
+from digitalio import DigitalInOut, Direction, Pull
+
+encoder = rotaryio.IncrementalEncoder(board.D3, board.D2)
+last_position = 0
+btn = DigitalInOut(board.D4)
+btn.direction = Direction.INPUT
+btn.pull = Pull.UP
+state = 0
+buttonState = 1
+
+i2c = board.I2C()
+lcd = LCD(I2CPCF8574Interface(i2c, 0x3f), num_rows=2, num_cols=16)
+
+ledGreen = DigitalInOut(board.D8)
+ledYellow = DigitalInOut(board.D9)
+ledRed = DigitalInOut(board.D10)
+ledGreen.direction = Direction.OUTPUT
+ledYellow.direction = Direction.OUTPUT
+ledRed.direction = Direction.OUTPUT
+
+while True:
+    position = encoder.position
+    if position != last_position:
+        if position > last_position:
+            state = state + 1
+        elif position < last_position:
+            state = state - 1
+        if state > 2:
+            state = 2
+        if state < 0:
+            state = 0
+        print(state)
+        if state == 0: 
+            lcd.set_cursor_pos(0, 0)
+            lcd.print("GO    ")
+        elif state == 1:
+            lcd.set_cursor_pos(0, 0)
+            lcd.print("CAUTION")
+        elif state == 2:
+            lcd.set_cursor_pos(0, 0)
+            lcd.print("STOP  ")
+    if btn.value == 0 and buttonState == 1:
+        print("button pressed")
+        if state == 0: 
+                ledGreen.value = True
+                ledRed.value = False
+                ledYellow.value = False
+        elif state == 1:
+                ledYellow.value = True
+                ledRed.value = False
+                ledGreen.value = False
+        elif state == 2:
+                ledRed.value = True
+                ledGreen.value = False
+                ledYellow.value = False
+        buttonState = 0
+    if btn.value == 1:
+        time.sleep(.1)
+        buttonState = 1
+    last_position = position
+```
+
+### Evidence
+
+![ezgif-2-18cfe85825](https://user-images.githubusercontent.com/112961319/228268374-5b628c2a-e88f-4d51-a91c-fadfb7a83957.gif)
+
+### Wiring
+
+![image](https://user-images.githubusercontent.com/112961319/228112455-8cf5839a-5b59-4f4b-af92-19df2261d497.png)
+
+### Reflection
+
+Most of the code is from [Graham Gilbert-Schroeer](https://github.com/VeganPorkChop/Engineering-3-Documentation/tree/master/IntermediateCoding-Engineering%203#Temperature_Reading) but me [Jack Helmke](https://github.com/jhelmke45/ExpertCircuitPython) made some minor changes, in order to better implement it into our use case. Other than the rotary encoder, this assignment predominantly used features I was comfortable with, although, I did need to relearn how to wire an led as I hadn't done so in a while.
+
+## CircuitPython_Photointerrupter
+
+### Description & Code
+
+The purpose of this assignment was to reintroduce us to the photointerrupter, a sensor I had become relatively comfortable with in arduino, in circuit python.
+
+Code credit goes to [Graham Gilbert-Schroeer](https://github.com/VeganPorkChop/Engineering-3-Documentation/tree/master/IntermediateCoding-Engineering%203#Temperature_Reading)
+
+```python
+import time
+import digitalio
+import board
+
+#Import necessary libraries
+
+photoI = digitalio.DigitalInOut(board.D7)
+photoI.direction = digitalio.Direction.INPUT
+photoI.pull = digitalio.Pull.UP
+
+#Set up a digital input for the photo interrupter and enable its pull-up resistor
+
+last_photoI = True
+last_update = -4
+
+#Initialize variables for counting the number of times the photo interrupter is triggered
+
+photoICrosses = 0
+
+while True:
+    if time.monotonic()-last_update > 4:
+        print(f"The number of crosses is {photoICrosses}")
+        last_update = time.monotonic()
+    
+    if last_photoI != photoI.value and not photoI.value:
+        # Check if the photo interrupter state has changed and if it is currently interrupted
+        photoICrosses += 1
+        # Increment the count of photo interrupter crosses
+    last_photoI = photoI.value
+```
+### Evidence
+
+![ezgif-5-710cb4aba6](https://user-images.githubusercontent.com/112961319/228274863-dd61e274-aee7-4a0c-a4d4-8cee61eebdb2.gif)
+
+### Wiring
+
+![Capture](https://user-images.githubusercontent.com/112961319/228252194-a7885482-b073-48ba-a759-1ba3c0d52791.PNG)
+
+### Reflection
+
+The majority of this assignment was relatively simple, as its primary focus was reintroducing us to something I was already realtively comfortable with, although, there was some cool changes in circuit python that made it quite interesting.
