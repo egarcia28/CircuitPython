@@ -1,5 +1,5 @@
 # CircuitPython
-#Quarter 1
+# Quarter 1
 
 If you want to draw inspiration from other classmates, feel free to check [this directory of all students!](https://github.com/chssigma/Class_Accounts).
 
@@ -140,8 +140,6 @@ I found this assignment to be very challenging. I had never worked with LCDs or 
 
 ### Description & Code
 
-Code credit goes to my classmate [Jack Helmke](https://github.com/jhelmke45/CircuitPython)
-
 ```python
 #Elias Garcia
 #This changes a gradient on the neopixel based on the distance outputted by the ultrasonic sensor
@@ -185,7 +183,7 @@ while True:
     time.sleep(0.1)
 
 ```
-This is code that uses a sensor to measure the distance in cm and then uses that information to change the color of a neopixel. If the distance is less than 5cm, the neopixel will be red. If the distance is greater than 5cm and less than 20cm, the neopixel will be a gradient of red. If the distance is greater than 20cm and less than 35cm, the neopixel will be a gradient of blue. If the distance is greater than 35cm, the neopixel will be  green.
+Both me and my classmate [Jack Helmke](https://github.com/jhelmke45/CircuitPython) worked on this code which is based off of code from [Graham Gilbert-Schroeer](https://github.com/VeganPorkChop/Engineering-3-Documentation)
 
 ### Evidence
 
@@ -230,7 +228,7 @@ _Wiring diagram from [Kaz Shinozaki](https://github.com/kshinoz98/CircuitPython)
 ### Reflection
 This assignment required us to work on our wiring skill as most of this assighnment was identiacal to a simmilar one we did last year, although one major difference was the boards we used with the new ones not having short protection, forcing us to be more careful.
 
-#Quarter 2
+# Quarter 3
 
 ## CircuitPython_Temp_Sensor
 
