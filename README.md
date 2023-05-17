@@ -10,7 +10,6 @@ If you want to draw inspiration from other classmates, feel free to check [this 
 * [Motor Control](#Motor_Control)
 * [CircuitPython Rotary Encoder](#CircuitPython_Rotary_Encoder)
 * [CircuitPython_Photointerrupter](#CircuitPython_Photointerrupter)
-* [Ultrasonic Sensor](#CircuitPython_Ultrasonic)
 ---
 
 
