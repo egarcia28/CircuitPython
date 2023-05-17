@@ -20,8 +20,6 @@ If you want to draw inspiration from other classmates, feel free to check [this 
 
 For this assignment we were tasked with relearning how to control a servo in circuit python rather than arduino. The goal of the assignment was to get a servo to sweep back and forth and be able to control the degrees it would sweep to.
 
-Code credit goes to [this adafruit link](https://learn.adafruit.com/adafruit-metro-m4-express-featuring-atsamd51/circuitpython-servo)
-
 ```python
 #Elias
 # SPDX-FileCopyrightText: 2018 Kattni Rembor for Adafruit Industries
@@ -49,6 +47,9 @@ while True:
         my_servo.angle = angle
         time.sleep(0.0)
 ```
+
+Code credit goes to [this adafruit link](https://learn.adafruit.com/adafruit-metro-m4-express-featuring-atsamd51/circuitpython-servo)
+
 
 ### Evidence
 
@@ -119,7 +120,7 @@ while True:
             pass
     time.sleep(0.1) # sleep for debounce
 ```
-
+Thanks to [Grant Gastinger](https://github.com/ggastin30/CPython) for help with the code
 
 ### Evidence
 
@@ -140,7 +141,6 @@ I found this assignment to be very challenging. I had never worked with LCDs or 
 
 The purpose of this assignment, simmilar to those that came before it, was to help us relearn how to use different sensors and mechanics in circuit python, as well as introduce new tools. For this assignment we were tasked with displaying a gradient on the metro's built in neopixel led based on the distance recorded from an ultrasonic sensor.
 
-Both me and my classmate [Jack Helmke](https://github.com/jhelmke45/CircuitPython) worked on this code which is based off of code from [Graham Gilbert-Schroeer](https://github.com/VeganPorkChop/Engineering-3-Documentation)
 
 ```python
 #Elias Garcia
@@ -184,7 +184,7 @@ while True:
     time.sleep(0.1)
 
 ```
-
+Both me and my classmate [Jack Helmke](https://github.com/jhelmke45/CircuitPython) worked on this code which is based off of code from [Graham Gilbert-Schroeer](https://github.com/VeganPorkChop/Engineering-3-Documentation)
 
 ### Evidence
 
@@ -218,7 +218,7 @@ while True:
     motor.value = int(simpleio.map_range(pot.value, 96, 65520, 0, 65535))
     time.sleep(.1)          
 ```    
-    _Code from [Kaz Shinozaki](https://github.com/kshinoz98/CircuitPython)_
+Code from [Kaz Shinozaki](https://github.com/kshinoz98/CircuitPython)_
 
 ### Evidence
 
@@ -368,6 +368,7 @@ while True:
         buttonState = 1
     last_position = position
 ```
+Thanks to [Graham Gilbert-Schroeer](https://github.com/VeganPorkChop/Engineering-3-Documentation) for the code
 
 ### Evidence
 
