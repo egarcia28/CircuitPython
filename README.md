@@ -18,6 +18,8 @@ If you want to draw inspiration from other classmates, feel free to check [this 
 
 ### Description & Code
 
+For this assignment we were tasked with relearning how to control a servo in circuit python rather than arduino. The goal of the assignment was to get a servo to sweep back and forth and be able to control the degrees it would sweep to.
+
 Code credit goes to [this adafruit link](https://learn.adafruit.com/adafruit-metro-m4-express-featuring-atsamd51/circuitpython-servo)
 
 ```python
@@ -47,11 +49,6 @@ while True:
         my_servo.angle = angle
         time.sleep(0.0)
 ```
-First, I imported the necessary libraries:
-Next, you will need to create a PWMOut object on the specified pin. In this case, I used pin D1:
-To move the servo, you will need to set the duty cycle of the PWM signal. A value of 2000 corresponds to a fully clockwise rotation, while a value of 1000 corresponds to a fully counter-clockwise rotation. Values in between will result in proportional movement.
-For example, to rotate the servo clockwise by 90 degrees:
-servo.duty_cycle = 2000 time.sleep(0.5)
 
 ### Evidence
 
@@ -68,6 +65,8 @@ It was really easy to move the servo once I figured out how to set up the PWMOut
 ## CircuitPython_LCD
 
 ### Description & Code
+
+The purpose of this assignment was also to help us relearn how to use and control a lcd in circuit python. The goal of the assignment was to get an lcd to display a counting variable that would either increase or decrease based on the push of 2 buttons.
 
 Code credit goes to [Grant Gastinger](https://github.com/ggastin30/CPython)
 
@@ -120,7 +119,7 @@ while True:
             pass
     time.sleep(0.1) # sleep for debounce
 ```
-This code creates an LCD object and prints "elias" to the LCD. It also sets up a button and a switch, and tracks the number of times the button is clicked. If the switch is on, clicking the button decreases the click count. If the switch is off, clicking the button increases the click count.
+
 
 ### Evidence
 
@@ -132,18 +131,21 @@ This code creates an LCD object and prints "elias" to the LCD. It also sets up a
 
 ### Reflection
 
-I found this assignment to be very challenging. I had never worked with LCDs or buttons in circuit python before, so it was a lot of new material for me. I'm glad I was able to figure it out in the end, and I'm proud of my finished product.
+I found this assignment to be very challenging. I had never worked with LCDs or buttons in circuit python before, so it was a lot of new material for me. I'm glad I was able to figure it out in the end, and I'm proud of my finished product. One of the more interesting problems I came accross was how the metro recognized some of the lcds as 0x3f and some as 0x27.
 
 
 ## CircuitPython_Ultrasonic
 
 ### Description & Code
 
+The purpose of this assignment, simmilar to those that came before it, was to help us relearn how to use different sensors and mechanics in circuit python, as well as introduce new tools. For this assignment we were tasked with displaying a gradient on the metro's built in neopixel led based on the distance recorded from an ultrasonic sensor.
+
+Both me and my classmate [Jack Helmke](https://github.com/jhelmke45/CircuitPython) worked on this code which is based off of code from [Graham Gilbert-Schroeer](https://github.com/VeganPorkChop/Engineering-3-Documentation)
+
 ```python
 #Elias Garcia
 #This changes a gradient on the neopixel based on the distance outputted by the ultrasonic sensor
 #Base code from Graham Gilbert-Schroeer
-
 import time
 import board
 import adafruit_hcsr04
@@ -182,7 +184,7 @@ while True:
     time.sleep(0.1)
 
 ```
-Both me and my classmate [Jack Helmke](https://github.com/jhelmke45/CircuitPython) worked on this code which is based off of code from [Graham Gilbert-Schroeer](https://github.com/VeganPorkChop/Engineering-3-Documentation)
+
 
 ### Evidence
 
@@ -199,6 +201,7 @@ This was a fun  and realtively easy project. I liked getting to use the sensor a
 ## Motor_Control
 
 ### Description and Code
+
 For this assignmnent we were tasked with wiring and coding a dc motor that would change its speed based on a value given to it by a potentionmeter. 
 
 ```python
